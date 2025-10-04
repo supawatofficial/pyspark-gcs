@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  pyspark-notebook:
+    image: jupyter/pyspark-notebook
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./cred:/home/jovyan/cred
+    ports:
+      - 8888:8888 # Jupyter Notebook
+      - 4040:4040 # Spark UI
+      
